@@ -1,1 +1,1 @@
-Complete Registration for {{ site.name }}
+Quark 2016 : confirm account creation
