@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'registration',
     'django.contrib.auth',
+    'home',
+    'wavesprofile',
 
 )
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table class = "table table-striped">
+            {% for field in u %}
+    <tr>
+    <td><b>{{ field.label }}</b></td><td> {{ field.data }}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

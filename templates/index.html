@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>This is Waves 2016. Tides of Time.
+Hi,</p> 
+{% if request.user.is_authenticated %}
+<p>{{ username }}</p>
+{% endif %}
+</body>
+</html>

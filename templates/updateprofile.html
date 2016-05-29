@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form|crispy }}
+		<input class = "btn btn-primary" type = "submit" value = "Update">
+	</form>
+</body>
+</html>
