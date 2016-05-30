@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 class UpdateProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
-		exclude = ['user']
+		exclude = []
+		widgets = {'user': forms.HiddenInput()}
 
 class AdminProfileForm(forms.ModelForm):
 	class Meta:
