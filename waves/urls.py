@@ -11,3 +11,4 @@ urlpatterns = [
     url(r'^accounts/profile','wavesprofile.views.FillProfile', name='fillprofile'),
     url(r'^profile/','wavesprofile.views.SeeProfile', name='profile'),
 ]
+#test
