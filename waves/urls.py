@@ -8,6 +8,6 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^accounts/profile','wavesprofile.views.FillProfile', name='fillprofile'),
+    url(r'^accounts/profile','wavesprofile.views.SeeProfile', name='profile1'),
     url(r'^profile/','wavesprofile.views.SeeProfile', name='profile'),
 ]
