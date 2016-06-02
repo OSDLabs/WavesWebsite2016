@@ -6,9 +6,14 @@ class UpdateProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
 		exclude = []
-		widgets = {'user': forms.HiddenInput()}
+		widgets = {'user': forms.HiddenInput(),'email': forms.HiddenInput()}
 
 class AdminProfileForm(forms.ModelForm):
 	class Meta:
 		model = Profile
 		exclude = []
+
+class DisplayProfile(forms.ModelForm):
+	class Meta:
+		model = Profile
+		exclude = ['user', 'pic']

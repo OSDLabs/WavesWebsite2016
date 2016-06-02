@@ -7,7 +7,7 @@ import registration
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete = models.CASCADE)
 	name = models.CharField(max_length = 120)
-	# pic = models.FileField(upload_to = "uploads/")
+	pic = models.FileField(upload_to = "uploads/", default = '')
 	email = models.EmailField()
 	mobile = models.CharField(max_length = 10)
 	institute = models.CharField(max_length = 120)
@@ -17,3 +17,10 @@ class Profile(models.Model):
 	year = models.CharField(max_length =2)
 	updatedtime = models.DateTimeField(auto_now_add = False, auto_now = True)
 	settime = models.DateTimeField(auto_now_add = True, auto_now = False)
+
+class Institute(models.Model):
+	name = CharField(max_length=120)
+	code = CharField(max_length=5)
+
+class Department(models.Model):
+	name=CharField(max_length=60)

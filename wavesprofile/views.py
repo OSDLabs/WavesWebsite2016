@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.db import models
-from .forms import AdminProfileForm,UpdateProfileForm
+from .forms import AdminProfileForm,UpdateProfileForm,DisplayProfile
 from django.forms.models import model_to_dict
+import registration
+from django.contrib.auth.models import User
 # Create your views here.
 
 @login_required
@@ -13,17 +16,19 @@ def SeeProfile(request):
 			return redirect('fillprofile')
 			print("Hello")
 		profile_obj = Profile.objects.get(user=request.user)
-		u1 = UpdateProfileForm(data=model_to_dict(profile_obj))
-		iteru = iter(u1)
-		next(iteru)		
+		feeddata = model_to_dict(profile_obj)
+		print(feeddata.values)
+		u1 = DisplayProfile(data=feeddata)
+		pic = profile_obj.pic
 	context = {
-		'u' : iteru,
+		'u' : u1,
+		'pic' : pic,
 	}
 	return render(request,"profile.html",context)
 
 @login_required
 def UpdateProfile(request):
-	profile_obj = Profile.objects.get(user=request.user)
+	profile_obj = Profile.objects.get(username=request.user)
 	form = UpdateProfileForm(request.POST or None, instance=profile_obj)
 	if form.is_valid():
 		form.save()
@@ -36,12 +41,23 @@ def UpdateProfile(request):
 
 @login_required
 def FillProfile(request):
-	form = UpdateProfileForm(request.POST or None, initial={'user': request.user.id})
-	print(form)
-	if form.is_valid():
-		form.save()
-		return redirect('profile')
-	
+	print(User.objects.get(username=request.user.username).email)
+	if request.method == 'POST':
+
+		if Profile.objects.filter(user=request.user).count() == 0:
+			form = UpdateProfileForm(request.POST, request.FILES, initial={'user': request.user.id,'email':User.objects.get(username=request.user.username).email})
+		else:
+			profile_obj = Profile.objects.get(user=request.user)
+			form = UpdateProfileForm(request.POST,request.FILES, instance=profile_obj)
+		if form.is_valid():
+			form.save()
+			return redirect('profile')
+	else:
+		if Profile.objects.filter(user=request.user).count() == 0:
+			form = UpdateProfileForm(initial={'user': request.user.id,'email':User.objects.get(username=request.user.username).email})
+		else:
+			profile_obj = Profile.objects.get(user=request.user)
+			form = UpdateProfileForm(instance=profile_obj)
 	context = {
 		'form' : form
 	}

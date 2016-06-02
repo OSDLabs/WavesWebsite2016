@@ -11,7 +11,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>
+        {% block title %}
+{% endblock %}
+    </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -29,7 +32,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #eee">
 
     <div id="wrapper">
 
@@ -38,20 +41,32 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Waves 2016
+                        <h2>Waves 2016</h2>
                     </a>
+                    
+                </li>
+                <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src = "/media/{{ pic }}" style = "height:30px">   &nbsp;@{{ user.username }}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="#">Help & Feedback</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Manage Teams</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/accounts/logout">Logout</a></li>
+                </ul>
+                    </li>
+                <li>
+                    <a href="{% url 'profile' %}">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Profile</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
+                    <a href="{% url 'events' %}">Events</a>
                 </li>
                 <li>
                     <a href="#">Pro Nights</a>
                 </li>
                 <li>
-                    <a href="#">Accomodation</a>
+                    <a href="{% url 'accommodation' %}">Accommodation</a>
                 </li>
                 <li>
                     <a href="#">Merchandise</a>
@@ -64,11 +79,15 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-       
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
+                        
+                        <h1>
+                            {% block heading %}
+                            {% endblock %}
+                        </h1>
                         {% block content %}
                         
                         {% endblock %}
@@ -77,6 +96,14 @@
                         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
                         
+                    </div>
+                </div>
+                <div class="row" style="bottom:0;position: fixed;text-align: right;width:75%">
+                    <div class="col-sm-12">
+                    <div style="border: solid 1px #ccc;"></div>
+                    <div style="padding: 10px">
+                    &copy; Waves 2016
+                    </div>
                     </div>
                 </div>
             </div>
@@ -100,6 +127,12 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+    <style type="text/css">
+        .dropdown-menu li:hover
+        {
+            background-color: #999;
+        }
+    </style>
 
 </body>
 

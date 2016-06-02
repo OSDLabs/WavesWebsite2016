@@ -1,19 +1,21 @@
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% include 'head.html' %}
+
+
+
+{% block title %}
+Profile - Waves 2016
+{% endblock %}
+{% block heading %}
+Profile
+{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<div class = "row">
-	<div class = "col-sm-6 col-sm-offset-3">
-	<form method="POST">
+
+	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form|crispy }}
 		<input class = "btn btn-primary" type = "submit" value = "Update">
 	</form>
-	</div>
-	</div>
-</body>
-</html>
+{% endblock %}
