@@ -8,8 +8,7 @@
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3'>
 <h1>Register for Waves 2016</h1>
-<form method="post" action=".">
-  {% csrf_token %}
+<form method="post" action="."> {% csrf_token %}
   {{ form|crispy }}
 
   <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Join' %}" />
