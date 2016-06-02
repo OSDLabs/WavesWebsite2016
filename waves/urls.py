@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^events/$','events.views.Events', name='events'),
     url(r'^accommodation/$','accommodation.views.Accommodation', name='accommodation'),
     url(r'^profile/update/$','wavesprofile.views.FillProfile', name='fillprofile'),
+    url(r'^print/passslip/$','print.views.PassSlip', name='printpass'),
+    url(r'^barcode/$','print.views.barcode', name='barcode'),
 ]
 
 if settings.DEBUG:
