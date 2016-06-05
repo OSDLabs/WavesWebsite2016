@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^profile/update/$','wavesprofile.views.FillProfile', name='fillprofile'),
     url(r'^print/passslip/$','print.views.PassSlip', name='printpass'),
     url(r'^barcode/$','print.views.barcode', name='barcode'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
 if settings.DEBUG:

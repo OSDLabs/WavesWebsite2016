@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'crispy_forms',
     'django.contrib.sites',
     'registration',
+    'rest_framework',
+    'push_notifications',
     'django.contrib.auth',
     'home',
     'wavesprofile',
