@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Events - Waves 2016
+{% endblock %}
+
+{% block heading %}
+Team Events
+{% endblock %}
+
+{% block content %}
+<h4>Open for registration</h4>
+	<div class = "list-group">
+            {% for field in u %}
+    <a href = "/events/team/{{ field.id }}" class="list-group-item"><span class="badge">+ Participate</span>
+    {{ field.eventName }} <span style = "background-color:white; color:black"class="badge">{{ field.event_category }}</span>
+    </a>
+{% endfor %}
+</div>
+<h4>Already registered</h4>
+	<div class = "list-group">
+            {% for field in u1 %}
+    <a href = "/events/team/{{ field.id }}" class="list-group-item"><span style="background-color:#7ec0ee" class="badge">+ Details</span>
+    {{ field.eventName }}<span style = "background-color:white; color:black"class="badge">{{ field.event_category }}</span>
+    </a>
+{% endfor %}
+</div>
+{% endblock %}

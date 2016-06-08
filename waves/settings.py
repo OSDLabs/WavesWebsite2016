@@ -42,10 +42,13 @@ INSTALLED_APPS = (
     'rest_framework',
     'push_notifications',
     'django.contrib.auth',
+    'image_cropping',
+    'easy_thumbnails',
     'home',
     'wavesprofile',
     'accommodation',
     'events',
+    'team',
 
 )
 
@@ -125,7 +128,29 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "staticenv", "media_root")
 #Registration redux
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_AUTO_LOGIN = True
-LOGIN_REDIRECT_URL = "/profile/"
+LOGIN_REDIRECT_URL = "/dashboard/"
 CRISPY_TEMPLATE_PACK='bootstrap3'
 
 SITE_ID=1
+
+#Push notification settings
+# PUSH_NOTIFICATIONS_SETTINGS = {
+#         "GCM_API_KEY": "[your api key]",
+#         "APNS_CERTIFICATE": "/path/to/your/certificate.pem",
+# }
+
+#REST Framework settings
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+#image cropping settings
+from easy_thumbnails.conf import Settings as thumbnail_settings
+
+THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
+) + thumbnail_settings.THUMBNAIL_PROCESSORS

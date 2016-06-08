@@ -1,6 +1,7 @@
 from django import forms
 from .models import *
 from django.contrib.auth.models import User
+from image_cropping import ImageCropWidget
 
 class UpdateProfileForm(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
@@ -20,4 +21,4 @@ class AdminProfileForm(forms.ModelForm):
 class DisplayProfile(forms.ModelForm):
 	class Meta:
 		model = Profile
-		exclude = ['user', 'pic']
+		exclude = ['user']

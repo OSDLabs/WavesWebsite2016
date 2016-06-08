@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dashboard - Waves 2016
+{% endblock %}
+
+{% block heading %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+<p>Hello {{ request.user.profile.name }},</p>
+<p>Thanks for registering for Waves 2016. We are privileged to host you at our upcoming festival</p>
+{% endblock %}

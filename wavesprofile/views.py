@@ -19,25 +19,24 @@ def SeeProfile(request):
 		feeddata = model_to_dict(profile_obj)
 		print(feeddata.values)
 		u1 = DisplayProfile(data=feeddata)
-		pic = profile_obj.pic
 	context = {
+		'obj':profile_obj,
 		'u' : u1,
-		'pic' : pic,
 	}
 	return render(request,"profile.html",context)
 
-@login_required
-def UpdateProfile(request):
-	profile_obj = Profile.objects.get(username=request.user)
-	form = UpdateProfileForm(request.POST or None, instance=profile_obj)
-	if form.is_valid():
-		form.save()
-		return redirect('profile')
+# @login_required
+# def UpdateProfile(request):
+# 	profile_obj = Profile.objects.get(username=request.user)
+# 	form = UpdateProfileForm(request.POST or None, instance=profile_obj)
+# 	if form.is_valid():
+# 		form.save()
+# 		return redirect('profile')
 		
-	context = {
-		'form' : form
-	}
-	return render(request,"updateprofile.html",context)
+# 	context = {
+# 		'form' : form
+# 	}
+# 	return render(request,"updateprofile.html",context)
 
 @login_required
 def FillProfile(request):
@@ -45,13 +44,16 @@ def FillProfile(request):
 	if request.method == 'POST':
 
 		if Profile.objects.filter(user=request.user).count() == 0:
-			form = UpdateProfileForm(request.POST, request.FILES, initial={'user': request.user.id,'email':User.objects.get(username=request.user.username).email})
+			form = UpdateProfileForm(request.POST, request.FILES,initial={'user': request.user.id,'email':User.objects.get(username=request.user.username).email})
 		else:
 			profile_obj = Profile.objects.get(user=request.user)
 			form = UpdateProfileForm(request.POST,request.FILES, instance=profile_obj)
 		if form.is_valid():
-			form.save()
-			return redirect('profile')
+			instance = form.save(commit=False)
+			instance.user = request.user
+			instance.email = User.objects.get(username=request.user.username).email
+			instance.save()
+			return redirect('dashboard')
 	else:
 		if Profile.objects.filter(user=request.user).count() == 0:
 			form = UpdateProfileForm(initial={'user': request.user.id,'email':User.objects.get(username=request.user.username).email})
@@ -63,3 +65,6 @@ def FillProfile(request):
 	}
 	
 	return render(request,"updateprofile.html",context)
+
+def Dashboard(request):
+	return render(request, "dashboard.html")

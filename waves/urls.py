@@ -2,6 +2,23 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets
+
+# Serializers define the API representation.
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'email', 'is_staff')
+
+# ViewSets define the view behavior.
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 
 
 urlpatterns = [
@@ -13,11 +30,17 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     # url(r'^accounts/profile','wavesprofile.views.SeeProfile', name='profile1'),
     url(r'^profile/$','wavesprofile.views.SeeProfile', name='profile'),
-    url(r'^events/$','events.views.Events', name='events'),
+    url(r'^dashboard/$','wavesprofile.views.Dashboard', name='dashboard'),
+    url(r'^events/individual/$','events.views.Ind_Events', name='indevents'),
+    url(r'^events/individual/([0-9]+)$','events.views.Ind_Events_Reg', name='indeventsreg'),
+    url(r'^events/team/$','events.views.Team_Events', name='teamevents'),
+    url(r'^events/team/([0-9]+)$','events.views.Team_Events_Reg', name='teameventsreg'),
+
     url(r'^accommodation/$','accommodation.views.Accommodation', name='accommodation'),
     url(r'^profile/update/$','wavesprofile.views.FillProfile', name='fillprofile'),
     url(r'^print/passslip/$','print.views.PassSlip', name='printpass'),
     url(r'^barcode/$','print.views.barcode', name='barcode'),
+    url(r'^api/profile/', include('wavesprofile.api.urls', namespace = "profile-api")),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 

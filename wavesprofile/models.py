@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import signals
 import registration
+from image_cropping import ImageRatioField
 
 GENDER_CHOICES = (
 	(u'M',u'Male'),
@@ -25,7 +26,8 @@ YEAR_CHOICES = (
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete = models.CASCADE)
 	name = models.CharField(max_length = 120)
-	pic = models.FileField(upload_to = "uploads/", default = '')
+	# image = models.ImageField(upload_to = "uploads/profilepics/", default = '')
+	# cropping = ImageRatioField('image', '430x430')
 	email = models.EmailField()
 	mobile = models.CharField(max_length = 10)
 	institute = models.CharField(max_length = 120)

@@ -1,6 +1,7 @@
 from django.db import models
 import ast
-from events.models import *
+from events.models import Event
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -32,10 +33,10 @@ from events.models import *
 
 class Team(models.Model):
 	team_name = models.CharField(max_length=120, unique=True)
-	event = models.ForeignKey(Name_for_Team_Event_Model,max_length=120, related_name = "event_team", on_delete = models.CASCADE)
+	event = models.ForeignKey(Event,max_length=120, related_name = "event_team", on_delete = models.CASCADE)
 	team_lead = models.ForeignKey(User, related_name = "team_leader", on_delete = models.CASCADE)
 	# team_members = models.ListField()
 
-class Team_Members(models.Model)
+class Team_Members(models.Model):
 	team = models.ForeignKey(Team, related_name = "members",on_delete=models.CASCADE)
 	members = models.ForeignKey(User, related_name = "team_members",on_delete=models.CASCADE)

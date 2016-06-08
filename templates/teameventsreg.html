@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Events - Waves 2016
+{% endblock %}
+
+{% block heading %}
+Events
+{% endblock %}
+
+{% block small %}
+{{ u.eventName }}
+{% endblock %}
+
+{% block content %}
+
+<!-- 	<table class = "table table-striped">
+    <tr>
+    <td><b>{{ f }}</b></td>
+    </tr>
+
+</table> -->
+<form method="POST">
+{% csrf_token %}
+{% if reg %}
+<input class = "btn btn-danger" name = "unreg" type = "submit" value = "Leave Team and De-register" >
+{% else %}
+<input class = "btn btn-success" name = "reg" type = "submit" value = "Create Team" >
+<input class = "btn btn-info" name = "reg" type = "submit" value = "Join Team" >
+{% endif %}
+</form>
+
+{% endblock %}
