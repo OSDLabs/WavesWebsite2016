@@ -1,18 +1,67 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %}
-Events - Waves 2016
+Team Registration - Waves 2016
 {% endblock %}
 
 {% block heading %}
-Individual Events
+Team Registration
 {% endblock %}
 
 {% block content %}
 <div class="col-md-6">
+<div class="panel panel-primary panel-transparent">
+<div class="panel-heading">
 <h4>Team Information</h4>
+
+{% if dis %}
+<form method="POST">
+		{% csrf_token %}
+			{{  form|crispy }}
+			{{  form.errors }}
+		<input class = "btn btn-primary" type = "submit" value = "Create Team">
+	</form>
+{% else %}
+<hr>
+<div class = "row">
+<div class = "col-md-4">
+<p>Team Name           </p>
+<p>Participating Event </p>
+<p>Team Leader         </p>
+</div>
+<div class = "col-md-8">
+<p>: {{ form.team_name }}</p>
+<p>: {{ form.event }}</p>
+<p>: {{ form.team_lead }}</p>
+</div>
+</div>
+{% endif %}
+</div>
+</div>
 </div>
 <div class="col-md-6">
+<div class="panel panel-primary panel-transparent">
+<div class="panel-heading">
 <h4>Members</h4>
+</div>
+<div class="panel-body">
+<div class = "list-group">
+            {% for field in members %}
+    <a href = "/events/teamcreate/{{ form.event.id }}/?id={{ field.id }}" class="list-group-item">
+    {{ field.members }}<span style = "background-color:#ffcccb;" class="badge">- Remove</span>
+    </a>
+  {% endfor %}
+</div>
+{% if dis %}
+<input class = "btn btn-primary disabled" type = "submit" value = "Add Members">
+{% else %}
+<form method="POST">
+		{% csrf_token %}
+		{{ form2|crispy }}
+		<input class = "btn btn-primary" type = "submit" value = "Add Members">
+</form>
+{% endif %}
+</div>
+</div>
 </div>
 {% endblock %}

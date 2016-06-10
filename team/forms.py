@@ -1,4 +1,4 @@
-from django import models
+from django import forms
 from .models import *
 from django.contrib.auth.models import User
 
@@ -13,8 +13,14 @@ class TeamForm(forms.ModelForm):
 		model = Team
 		exclude = []
 
+class TeamFormEvent(forms.ModelForm):
+	class Meta:
+		model = Team
+		exclude = []
+		widgets = {'team_lead': forms.HiddenInput(), 'event': forms.HiddenInput()}
+
 class MemberForm(forms.ModelForm):
 	class Meta:
-		model = Team_Member
+		model = Team_Members
 		exclude = []
-
+		widgets = {'team': forms.HiddenInput()}

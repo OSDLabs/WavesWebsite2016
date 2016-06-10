@@ -25,9 +25,10 @@ Events
 {% if reg %}
 <input class = "btn btn-danger" name = "unreg" type = "submit" value = "Leave Team and De-register" >
 {% else %}
-<input class = "btn btn-success" name = "reg" type = "submit" value = "Create Team" >
+
 <input class = "btn btn-info" name = "reg" type = "submit" value = "Join Team" >
 {% endif %}
 </form>
+<a href="/events/teamcreate/{{ u.id }}"><button class="btn btn-success" >Create Team</button></a>
 
 {% endblock %}
