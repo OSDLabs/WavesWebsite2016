@@ -40,7 +40,6 @@ def SeeProfile(request):
 
 @login_required
 def FillProfile(request):
-	print(User.objects.get(username=request.user.username).email)
 	if request.method == 'POST':
 
 		if Profile.objects.filter(user=request.user).count() == 0:

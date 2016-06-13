@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^events/individual/([0-9]+)$','events.views.Ind_Events_Reg', name='indeventsreg'),
     url(r'^events/team/$','events.views.Team_Events', name='teamevents'),
     url(r'^events/team/([0-9]+)$','events.views.Team_Events_Reg', name='teameventsreg'),
+    url(r'^events/teamcreate/([0-9]+)','team.views.Team_Create_Event', name='teamcreateevent'),
 
     url(r'^accommodation/$','accommodation.views.Accommodation', name='accommodation'),
     url(r'^profile/update/$','wavesprofile.views.FillProfile', name='fillprofile'),
