@@ -1,3 +1,4 @@
 *.pyc
 staticfiles
 .env
+production.py
