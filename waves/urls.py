@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
+from django.views.generic import TemplateView
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -36,7 +37,8 @@ urlpatterns = [
     url(r'^events/team/$','events.views.Team_Events', name='teamevents'),
     url(r'^events/team/([0-9]+)$','events.views.Team_Events_Reg', name='teameventsreg'),
     url(r'^events/teamcreate/([0-9]+)','team.views.Team_Create_Event', name='teamcreateevent'),
-
+    url(r'^help/$','help.views.HelpView', name='help'),
+    url(r'^contact/$',TemplateView.as_view(template_name='contact.html')),
     url(r'^accommodation/$','accommodation.views.Accommodation', name='accommodation'),
     url(r'^profile/update/$','wavesprofile.views.FillProfile', name='fillprofile'),
     url(r'^print/passslip/$','print.views.PassSlip', name='printpass'),
