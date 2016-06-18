@@ -1,13 +1,12 @@
 from django import forms
 from .models import *
 from django.contrib.auth.models import User
-from image_cropping import ImageCropWidget
 
 class UpdateProfileForm(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
 		super(UpdateProfileForm, self).__init__(*args, **kwargs)
-		self.fields['institute'] = forms.ModelChoiceField(queryset=Institute.objects)
-		self.fields['department'] = forms.ModelChoiceField(queryset=Department.objects)
+		# self.fields['institute'] = forms.ModelChoiceField(queryset=Institute.objects)
+		# self.fields['department'] = forms.ModelChoiceField(queryset=Department.objects)
 	class Meta:
 		model = Profile
 		exclude = []

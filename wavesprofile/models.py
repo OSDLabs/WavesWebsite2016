@@ -2,12 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import signals
 import registration
-from image_cropping import ImageRatioField
+
+DEP_CHOICES = (
+	(u'Arts',u'Arts'),
+	(u'Management',u'Management'),
+	(u'Commerce',u'Commerce'),
+	(u'Engineering',u'Engineering'),
+	(u'Others',u'Others'),
+	)
+
 
 GENDER_CHOICES = (
 	(u'M',u'Male'),
 	(u'F',u'Female'),
-	(u'T',u'Transgender')
 	)
 
 YEAR_CHOICES = (
@@ -31,7 +38,7 @@ class Profile(models.Model):
 	email = models.EmailField()
 	mobile = models.CharField(max_length = 10)
 	institute = models.CharField(max_length = 120)
-	department = models.CharField(max_length = 60)
+	department = models.CharField(max_length = 60, choices=DEP_CHOICES)
 	gender = models.CharField(max_length = 1, choices=GENDER_CHOICES)
 	dob = models.DateField(auto_now_add = True, auto_now = False)
 	year = models.CharField(max_length =2, choices = YEAR_CHOICES)

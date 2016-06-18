@@ -4,4 +4,4 @@ from wavesprofile.models import Profile
 class ProfileSerializer(ModelSerializer):
 	class Meta:
 		model = Profile
-		exclude = ['image']
+		exclude = []

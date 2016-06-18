@@ -55,7 +55,7 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
                         <li class="message-preview">
@@ -134,7 +134,7 @@
                             <a href="#">View All</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                     {% if request.user.profile.name %}
@@ -164,20 +164,25 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="{% url 'dashboard' %}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="{% url 'profile' %}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
+                    {% if request.user.profile %}
                      <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-rocket"></i> Events <i class="fa fa-fw fa-caret-down"></i></a>
+                         
                         <ul id="demo" class="collapse">
                             <li>
                                 <a href="{% url 'indevents' %}"><i class="fa fa-fw fa-user"></i>  Individual Events</a>
                             </li>
+                           
                             <li>
-                                <a href="{% url 'teamevents' %}"><i class="fa fa-fw fa-users"></i>  Team Events</a>
+                                <a href="#"><i class="fa fa-fw fa-users"></i>  Team Events</a>
                             </li>
+                           
                         </ul>
                     </li>
-                    <li>
+                    {% endif %}
+                    <!-- <li>
                         <a href="#"><i class="fa fa-fw fa-building"></i> Accommodation</a>
                     </li>
                     <li>
@@ -188,7 +193,7 @@
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-credit-card"></i> Transactions</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

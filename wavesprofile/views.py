@@ -52,7 +52,7 @@ def FillProfile(request):
 			instance.user = request.user
 			instance.email = User.objects.get(username=request.user.username).email
 			instance.save()
-			return redirect('dashboard')
+			return redirect('profile')
 	else:
 		if Profile.objects.filter(user=request.user).count() == 0:
 			form = UpdateProfileForm(initial={'user': request.user.id,'email':User.objects.get(username=request.user.username).email})

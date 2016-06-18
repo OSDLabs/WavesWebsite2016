@@ -12,7 +12,15 @@ EVENT_TYPES = (
 CATEGORY = (
     (u'Drama',u'Drama'),
     (u'Dance',u'Dance'),
-    (u'Comedy',u'Comedy'),
+    (u'Big4',u'Big4'),
+    (u'Business',u'Business'),
+    (u'Fine Arts',u'Fine Arts'),
+    (u'Literary',u'Literary'),
+    (u'Music',u'Music'),
+    (u'Film',u'Film'),
+    (u'Photography',u'Photography'),
+    (u'Quiz',u'Quiz'),
+    (u'Special',u'Special'),
     )
 
 class Event(models.Model):

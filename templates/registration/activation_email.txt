@@ -1,21 +1,36 @@
 {% load i18n %}
 {% trans "Activate account at" %} {{ site.name }}:
 
-Quark has receive
+{% blocktrans with site_name=site.name %}
+If this wasn't you, please ignore this email and your address will be removed from our records.
+
+Hi,
+
+Thank you for registering at {{ site_name }}. We are happy to host you at our fest.
+
+{% endblocktrans %}
+
+{% blocktrans %}
 
 Click the link below to activate your account.
 
-http://{{ site.domain }}{% url 'registration_activate' activation_key %}
+{% endblocktrans %}
+
+http://bits-waves.org/{% url 'registration_activate' activation_key %}
+
 
 
 {% blocktrans %}The above link is valid for {{ expiration_days }} days.{% endblocktrans %}
 
+{% blocktrans %}
 
 If the above links do not work, or you have any other issues regarding
-your account, please contact administration at webmaster@bits-quark.org.
+your account, please contact administration at support@bits-quark.org.
 
--Team Quark 2016
+-Team Waves 2016
 
 
 CONFIDENTIALITY NOTICE:
 The contents of this email message and any attachments are intended solely for the addressee(s) and may contain confidential and/or privileged information and may be legally protected from disclosure. If you are not the intended recipient of this message or their agent, or if this message has been addressed to you in error, please immediately alert the sender by reply email and then delete this message and any attachments. If you are not the intended recipient, you are hereby notified that any use, dissemination, copying, or storage of this message or its attachments is strictly prohibited.
+
+{% endblocktrans %}
