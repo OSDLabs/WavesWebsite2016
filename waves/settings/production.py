@@ -35,7 +35,7 @@ if not settings.DEBUG:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
 
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['bits-waves.org', 'www.bits-waves.org']
 
     EMAIL_HOST = 'smtp.webfaction.com'
     EMAIL_HOST_USER = 'sendi'

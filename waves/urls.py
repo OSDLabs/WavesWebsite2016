@@ -24,11 +24,13 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     # Examples:
     url(r'^$', 'home.views.home', name='home'),
+    url(r'^contact/$', 'home.views.contact', name='contact'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    # url(r'^accounts/profile','wavesprofile.views.SeeProfile', name='profile1'),
+    url(r'^accounts/profile','wavesprofile.views.SeeProfile', name='profile1'),
+
     url(r'^profile/$','wavesprofile.views.SeeProfile', name='profile'),
     url(r'^dashboard/$','wavesprofile.views.Dashboard', name='dashboard'),
     url(r'^events/individual/$','events.views.Ind_Events', name='indevents'),

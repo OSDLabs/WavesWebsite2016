@@ -19,7 +19,7 @@ def Ind_Events(request):
 
 def Team_Events(request):
 	u_open = Event.objects.filter(event_type = 'T').exclude(event__event_part = request.user).order_by('event_category')
-	u_reg = Event.objects.filter(Q(event_team__team_members = request.user) | Q(event_team__team_lead = request.user), event_type = 'T').order_by('event_category')
+	u_reg = Event.objects.filter(event_type = 'T', event__event_part = request.user).order_by('event_category')
 	# If Indi_Event_Participants.objects.filter(event=u,event_part=request.user).count() !=0
 	# u2 = Event.objects.filter(event_type = 'S')[0]
 	# u1 = Indi_Event_Participants.objects.filter(event__eventName = u2.eventName)
@@ -39,19 +39,19 @@ def Team_Events_Reg(request,regid):
 		if request.POST.get('unreg'):
 			lorem = Indi_Event_Participants.objects.get(event=u,event_part=request.user)
 			lorem.delete()
-			return redirect('indevents')
+			return redirect('teamevents')
 	except: 
 		if request.POST.get('reg'):
 			lorem = Indi_Event_Participants(event=u,event_part=request.user)
 			lorem.save()
-			return redirect('indevents')
+			return redirect('teamevents')
 
 	context = {
 		'u': u,
 		'reg':reg,
 	}
 
-	return render(request,"teameventsreg.html", context)
+	return render(request,"indeventsreg.html", context)
 
 def Ind_Events_Reg(request,regid):
 	u = Event.objects.get(pk=regid)

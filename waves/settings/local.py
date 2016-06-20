@@ -128,7 +128,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "staticenv", "media_root")
 #Registration redux
 ACCOUNT_ACTIVATION_DAYS = 3
 REGISTRATION_AUTO_LOGIN = True
-LOGIN_REDIRECT_URL = "/dashboard/"
+LOGIN_REDIRECT_URL = "/profile/"
 CRISPY_TEMPLATE_PACK='bootstrap3'
 
 SITE_ID=1

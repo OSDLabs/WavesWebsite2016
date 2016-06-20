@@ -45,6 +45,9 @@ class Profile(models.Model):
 	updatedtime = models.DateTimeField(auto_now_add = False, auto_now = True)
 	settime = models.DateTimeField(auto_now_add = True, auto_now = False)
 
+	def __str__(self):
+		return self.name
+
 class Institute(models.Model):
 	name = models.CharField(max_length=120)
 

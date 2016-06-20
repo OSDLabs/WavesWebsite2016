@@ -17,6 +17,17 @@ def home(request):
     
     return render(request, "index.html",context)
 
+def contact(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    
+    return render(request, "contact.html",context)
+
 
 def handler404(request):
     response = render_to_response('404.html', {},

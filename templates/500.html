@@ -1,9 +1,58 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+Waves 2016 | The tides of time
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 </head>
-<body>
-Error 500
+<body class="container-fluid">
+<div class = "row vcenter">
+<div class='col-sm-4 col-sm-offset-4' style="text-align: center;">
+<h3>You made some Error there, buddy</h3>
+<h3>Error 500</h3>
+<br><br>
+<h6>For, queries mail to webadmin@bits-waves.org</h6>
+</div>
+
+</div>
+<style type="text/css">
+	body
+	{
+		background-image:url("{% static 'img/wavesbackground.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+	}
+    .panel-transparent {
+        background: none;
+    }
+
+    .panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.9)!important;
+    }
+
+    .panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.8)!important;
+    }
+    
+   /* .vcenter
+    {
+        padding:50px 50px;
+    }*/
+</style>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript">
+    $('.vcenter').css('padding-top',(($(window).height()- $('.vcenter').height())/2))
+</script>
 </body>
 </html>
