@@ -1,0 +1,47 @@
+[
+{
+    "fields": {
+        "name": "Sebastin Santy",
+        "settime": "2016-06-07T08:58:06.619Z",
+        "institute": "BITS Pilani K.K. Birla Goa Campus",
+        "email": "sebastinssanty@gmail.com",
+        "user": 1,
+        "mobile": "7774008257",
+        "year": "U1",
+        "updatedtime": "2016-06-07T19:04:32.199Z",
+        "dob": "2016-06-07",
+        "department": "Electronics and Instrumentation",
+        "gender": "M"
+    },
+    "pk": 1,
+    "model": "wavesprofile.profile"
+},
+{
+    "fields": {
+        "name": "BITS Pilani K.K. Birla Goa Campus"
+    },
+    "pk": 1,
+    "model": "wavesprofile.institute"
+},
+{
+    "fields": {
+        "name": "BITS Pilani Hyderabad Campus"
+    },
+    "pk": 2,
+    "model": "wavesprofile.institute"
+},
+{
+    "fields": {
+        "name": "Electronics and Instrumentation"
+    },
+    "pk": 1,
+    "model": "wavesprofile.department"
+},
+{
+    "fields": {
+        "name": "Mechanical Engineering"
+    },
+    "pk": 2,
+    "model": "wavesprofile.department"
+}
+]

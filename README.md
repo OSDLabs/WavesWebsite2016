@@ -1,6 +1,9 @@
 # WavesWebsite2016
 ##Installation
 
+[![codecov](https://codecov.io/gh/SebastinSanty/WavesWebsite2016/branch/master/graph/badge.svg)](https://codecov.io/gh/SebastinSanty/WavesWebsite2016)
+![travis](https://travis-ci.org/SebastinSanty/WavesWebsite2016.svg?branch=master)
+
 1. Make a Virtual Environment: 
 >`virtualenv waves`
 

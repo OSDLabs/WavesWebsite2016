@@ -7,13 +7,9 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('wavesprofile', '0001_initial'),
+        ('events', '0004_auto_20160613_1407'),
+        ('events', '0004_auto_20160613_1420'),
     ]
 
     operations = [
-        migrations.RenameField(
-            model_name='profile',
-            old_name='full_name',
-            new_name='name',
-        ),
     ]

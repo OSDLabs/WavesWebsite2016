@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^print/passslip/$','print.views.PassSlip', name='printpass'),
     url(r'^barcode/$','print.views.barcode', name='barcode'),
     url(r'^api/profile/', include('wavesprofile.api.urls', namespace = "profile-api")),
+    url(r'^api/events/', include('events.api.urls', namespace = "event-api")),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
