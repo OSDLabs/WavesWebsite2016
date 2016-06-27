@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+<!DOCTYPE html>
+{% for helps in helpList %}
+
+<h4>Message:</h4><br>
+	<pre>       {{helps.message}}</pre><br>
+{% if helps.reply %}
+<h4>Reply:</h4>
+	<pre>       {{helps.reply}}</pre><br><br><br><br><br><br><br><br>
+{% endif %}
+{% endfor %}
+
+<br><br>
+{% if helpForm %}
+<h4>Write Your Message Here</h4><br>
+<form method="post">
+	{% csrf_token %}
+	{{helpForm | crispy}}
+<input type="submit" value="Submit">
+</form>
+{% endif %}
+{% if confirmation %}
+<p>Thank You, We'll Get Back To You Soon</p>
+{% endif %}
+
+{% endblock %}
