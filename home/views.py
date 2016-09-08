@@ -15,7 +15,78 @@ def home(request):
     else:
         context = {}
     
-    return render(request, "index.html",context)
+    return render(request, "index1.html",context)
+
+def team(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    
+    return render(request, "team.html",context)
+
+def pronights(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "comingsoon.html",context)
+
+def events(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "comingsoon.html",context)
+
+def sponsors(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "comingsoon.html",context)
+
+def hospitality(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "comingsoon.html",context)
+
+def previousyear(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "comingsoon.html",context)
+
+def sightseeing(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "comingsoon.html",context)
 
 def contact(request):
     if request.user.is_authenticated():
@@ -25,7 +96,6 @@ def contact(request):
         }
     else:
         context = {}
-    
     return render(request, "contact.html",context)
 
 

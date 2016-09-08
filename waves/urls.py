@@ -24,7 +24,6 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     # Examples:
     url(r'^$', 'home.views.home', name='home'),
-    url(r'^contact/$', 'home.views.contact', name='contact'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
@@ -45,7 +44,16 @@ urlpatterns = [
     url(r'^barcode/$','print.views.barcode', name='barcode'),
     url(r'^api/profile/', include('wavesprofile.api.urls', namespace = "profile-api")),
     url(r'^api/events/', include('events.api.urls', namespace = "event-api")),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    url(r'^pronights/$', 'home.views.pronights', name='pronights'),
+    url(r'^events/$', 'home.views.events', name='events'),
+    url(r'^sponsors/$', 'home.views.sponsors', name='contact'),
+    url(r'^hospitality/$', 'home.views.hospitality', name='hospitality'),
+    url(r'^previousyear/$', 'home.views.previousyear', name='previousyear'),
+    url(r'^sightseeing/$', 'home.views.sightseeing', name='sightseeing'),
+    url(r'^contact/$', 'home.views.contact', name='contact'),
+    url(r'^team/$', 'home.views.team', name='team'),
 ]
 
 if settings.DEBUG:

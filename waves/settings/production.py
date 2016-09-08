@@ -49,6 +49,7 @@ if not settings.DEBUG:
     # Application definition
 
     INSTALLED_APPS = (
+        # 'flat',
         'django.contrib.admin',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
