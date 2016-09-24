@@ -23,14 +23,15 @@ Waves 2016 | The tides of time
 {% for i in category %}
 <div class = "row">
 <div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
-<br>
+ <br><br><br>
       <h3> {{ i }} </h3>
-<br>
+    <br><br><br>
 </div>
 </div>
 <div class = "row">
-{% for j in cat|get_item:i %}
-<div class='col-sm-6' style="text-align: center;">
+{% with catget=cat|get_item:i %}
+{% for j in catget %}
+<div class='col-sm-6 {% if catget|checkoffset:j %} col-sm-offset-3 {% endif %}' style="text-align: center;">
 <div class="eventcard card-1">
     {% if j.pic %}
     <img class = "eventpic" src="/media/{{ j.pic }}">
@@ -43,6 +44,7 @@ Waves 2016 | The tides of time
 </div>
 </div>
 {% endfor %}
+{% endwith %}
 </div>
 {% endfor %}
 <div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
@@ -75,9 +77,10 @@ Waves 2016 | The tides of time
     }
     .eventcard
     {
-        margin: 20px 20px;
+        margin: 30px 20px;
         padding: 15px 25px;
         background-color: #fff;
+        color: #444;
     }
 
     .eventpic

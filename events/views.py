@@ -23,7 +23,6 @@ def events(request):
 			event_prop["desc"] = j.event_desc
 			event_prop["type"] = j.event_type
 			event_props.append(event_prop)
-		print(event_props)
 		cat_names[i[0]] = event_props
 	# print(cat_names)
 	context = {
@@ -40,7 +39,14 @@ def get_item(dictionary, key):
 	return dictionary.get(key)
 @register.filter
 def fullf(eventtype):
-	return 'Team' if eventtype == 'T' else 'Single'
+	return 'Team' if eventtype == 'T' else 'Individual'
+
+@register.filter
+def checkoffset(catlist, catitem):
+	if len(catlist)%2 and catlist.index(catitem)==0:
+		return True
+	else:
+		return False
 
 # Create your views here.
 def Ind_Events(request):
