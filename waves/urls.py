@@ -47,7 +47,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^pronights/$', 'home.views.pronights', name='pronights'),
-    url(r'^events/$', 'home.views.events', name='events'),
+    url(r'^events/$', 'events.views.events', name='events'),
     url(r'^sponsors/$', 'home.views.sponsors', name='contact'),
     url(r'^hospitality/$', 'home.views.hospitality', name='hospitality'),
     url(r'^previousyear/$', 'home.views.previousyear', name='previousyear'),

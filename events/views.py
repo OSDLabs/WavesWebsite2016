@@ -2,6 +2,45 @@ from django.shortcuts import render,redirect
 from .models import Event,Indi_Event_Participants, CATEGORY
 from django.contrib import messages
 from django.db.models import Q
+from django.template import Context
+from django.template.defaulttags import register
+from collections import OrderedDict
+
+cat_names = {}
+
+def events(request):
+	cat = []
+	for i in CATEGORY:
+		cat.append(i[0])
+		cat_open = Event.objects.filter(event_category = i[0])
+		event_props = []
+		for j in cat_open:
+			event_prop = {}
+			event_prop["name"] = j.eventName
+			event_prop["date"] = j.eventDate
+			event_prop["rules"] = j.eventRules
+			event_prop["pic"] = j.eventpic
+			event_prop["desc"] = j.event_desc
+			event_prop["type"] = j.event_type
+			event_props.append(event_prop)
+		print(event_props)
+		cat_names[i[0]] = event_props
+	# print(cat_names)
+	context = {
+		"category" : cat,
+		"cat":cat_names
+	}
+	if request.user.is_authenticated():
+		username = request.user.username
+		context["username"] = username
+	return render(request, "front_events.html",context)
+
+@register.filter
+def get_item(dictionary, key):
+	return dictionary.get(key)
+@register.filter
+def fullf(eventtype):
+	return 'Team' if eventtype == 'T' else 'Single'
 
 # Create your views here.
 def Ind_Events(request):

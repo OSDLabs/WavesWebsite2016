@@ -1,0 +1,112 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+Waves 2016 | The tides of time
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<div class = "row vcenter">
+<h2 style="text-align:center">Events</h2>
+<br>
+{% for i in category %}
+<div class = "row">
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+<br>
+      <h3> {{ i }} </h3>
+<br>
+</div>
+</div>
+<div class = "row">
+{% for j in cat|get_item:i %}
+<div class='col-sm-6' style="text-align: center;">
+<div class="eventcard card-1">
+    {% if j.pic %}
+    <img class = "eventpic" src="/media/{{ j.pic }}">
+    {% endif %}
+    <h4> {{ j.name }} </h4>
+    <hr>
+    <p class="eventdesc"> {{ j.desc }} </p>
+    <p><b> {{ j.type|fullf }} Event</b></p>
+    <a href="/media/{{ j.rules }}" target="_blank"><button class = "btn btn-primary">{{ j.name }} Rules</button></a>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+
+<h4>For general queries, mail to info@bits-waves.org</h4>
+<h4>For web-related issues, mail to webadmin@bits-waves.org</h4>
+</div>
+
+</div>
+<style type="text/css">
+	body
+	{
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),url("{% static 'img/eventswall.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 30px 200px !important;
+        color: #ddd;
+	}
+    .panel-transparent {
+        background: none;
+    }
+
+    .panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.9)!important;
+    }
+
+    .panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.8)!important;
+    }
+    .eventcard
+    {
+        margin: 20px 20px;
+        padding: 15px 25px;
+        background-color: #fff;
+    }
+
+    .eventpic
+    {
+        width:100%;
+    }
+
+    .card-1 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+    .eventdesc
+    {
+        height: 100px;
+    }
+    
+   /* .vcenter
+    {
+        padding:50px 50px;
+    }*/
+</style>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript">
+    $('.vcenter').css('padding-top',(($(window).height()- $('.vcenter').height())/2))
+</script>
+</body>
+</html>
