@@ -12,13 +12,12 @@ EVENT_TYPES = (
 CATEGORY = (
     (u'Drama',u'Drama'),
     (u'Dance',u'Dance'),
-    (u'Big4',u'Big4'),
+    (u'Big 4',u'Big 4'),
     (u'Business',u'Business'),
     (u'Fine Arts',u'Fine Arts'),
     (u'Literary',u'Literary'),
     (u'Music',u'Music'),
-    (u'Film',u'Film'),
-    (u'Photography',u'Photography'),
+    (u'Film and Photography',u'Film and Photography'),
     (u'Quiz',u'Quiz'),
     (u'Special',u'Special'),
     )
