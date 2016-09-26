@@ -42,8 +42,6 @@ INSTALLED_APPS = (
     'rest_framework',
     'push_notifications',
     'django.contrib.auth',
-    'image_cropping',
-    'easy_thumbnails',
     'home',
     'wavesprofile',
     'accommodation',
@@ -147,10 +145,3 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-
-#image cropping settings
-from easy_thumbnails.conf import Settings as thumbnail_settings
-
-THUMBNAIL_PROCESSORS = (
-    'image_cropping.thumbnail_processors.crop_corners',
-) + thumbnail_settings.THUMBNAIL_PROCESSORS
