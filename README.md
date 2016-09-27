@@ -28,14 +28,10 @@ $ cd src
 $ pip install -r requirements.txt
 ```
 
-* For windows use:
+* For windows in the 2nd line use:
 
 ```
-$ virtualenv waves
 $ waves\Scripts\activate
-$ git clone https://github.com/OSDLabs/WavesWebsite2016 src
-$ cd src
-$ pip install -r requirements.txt
 ```
 
 * db.sqlite3 is the database for this repository, you can delete that if you want to start with a fresh database and follow: (But not required and can skip this step)
