@@ -28,7 +28,7 @@ $ cd src
 $ pip install -r requirements.txt
 ```
 
-* For windows in the 2nd line use:
+NOTE - For windows in the 2nd line use:
 
 ```
 $ waves\Scripts\activate
