@@ -23,9 +23,13 @@ If you are new to github, follow [git-task](https://github.com/OSDLabs/git-task)
 ```
 $ virtualenv waves
 $ source bin/activate
-$ git clone https://github.com//WavesWebsite2016 src
+$ git clone https://github.com/OSDLabs/WavesWebsite2016 src
 $ cd src
 $ pip install -r requirements.txt
+```
+NOTE for windows, in the 2nd line use:
+```
+$ waves\Scripts\activate
 ```
 
 * db.sqlite3 is the database for this repository, you can delete that if you want to start with a fresh database and follow: (But not required and can skip this step)
