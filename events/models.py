@@ -37,3 +37,10 @@ class Event(models.Model):
 class Indi_Event_Participants(models.Model):
 	event = models.ForeignKey(Event, related_name = "event", on_delete = models.CASCADE)
 	event_part = models.ForeignKey(User, related_name = "event_participating", on_delete = models.CASCADE)
+
+class Rounds(models.Model):
+    event = models.ForeignKey(Event, related_name = "rounds", on_delete = models.CASCADE)
+    roundTitle = models. CharField(max_length = 50)
+    roundDay = models.DateField()
+    roundLocation = models.CharField(max_length = 50)
+    roundTime = models.TimeField()
