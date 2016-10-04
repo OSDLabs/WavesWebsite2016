@@ -24,6 +24,7 @@ router.register(r'users', UserViewSet)
 urlpatterns = [
     # Examples:
     url(r'^$', 'home.views.home', name='home'),
+    url(r'^mobile/$', 'home.views.mobile', name='mobile'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

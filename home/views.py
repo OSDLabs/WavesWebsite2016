@@ -14,7 +14,7 @@ def home(request):
         }
     else:
         context = {}
-    
+
     return render(request, "index1.html",context)
 
 def team(request):
@@ -25,7 +25,7 @@ def team(request):
         }
     else:
         context = {}
-    
+
     return render(request, "team.html",context)
 
 def pronights(request):
@@ -98,6 +98,15 @@ def contact(request):
         context = {}
     return render(request, "contact.html",context)
 
+def mobile(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "mobile.html",context)
 
 def handler404(request):
     response = render_to_response('404.html', {},

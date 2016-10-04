@@ -6,34 +6,61 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
 	<title>Waves 2016</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css">
 	<script src="https://use.fontawesome.com/1a7fce54c7.js"></script>
+	<script type="text/javascript">
+		var x = screen.width;
+		var y = window.innerWidth;
+		var z = window.devicePixelRatio;
+		var phyWidth = x;
+
+		if (phyWidth > 768) {
+
+			setTimeout(function() {
+				var s = skrollr.init({
+					smoothScrolling: true,
+					mobileDeceleration: 0.004,
+				});
+
+			}, 500);
+
+		} else {
+				document.location = "/mobile";
+		}
+
+		var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
+
+    if(isIE)
+    {
+        document.location = "/mobile";
+
+    }
+	</script>
 </head>
 
 <body>
-	<button id="myBtn" class="btn btn-default" style="z-index:1000;position: absolute; top: 0.5%; left: 0.2%;">Pre-Waves | Biswa Kalyan Rath</button>
+	<!-- <button id="myBtn" class="btn btn-default" style="position: absolute; top: 0.5%; left: 0.2%;">Pre-Waves | Biswa Kalyan Rath</button>
 
-	<!-- The Modal -->
+	The Modal
 	<div id="myModal" class="modal">
-		<!-- Modal content -->
+		Modal content
 		<div class="modal-content">
-			<span class="close" style="margin-right:5px;font-size:1.7em;" data-dismiss="modal"><strong>&times;</strong></span>
+			<span class="close"><strong>x</strong></span>
 			<img src="{% static 'img/biswa.jpg' %}" style="width:100%">
 		</div>
 
-	</div>
+	</div> -->
 
-	<div id="WavesLogo" style="position:fixed;width:100%;height:100%;">
-		<div id="loader" class="parallax black">
+		<!-- <div id="loader" class="parallax black">
 			<img style="width: 100%; height: 100%;" src="{% static 'images/loader.gif' %}" alt="Gif">
 			<div id="mob_text">
 
 			</div>
-		</div>
+		</div> -->
 		<div id="WavesLogo" style="position:fixed;width:100%;height:auto;">
 			<div id="background" class="my-center" data-230p=" opacity: 1" data-300p=" opacity: 0; display:block;" data-330p="display: none">
 
@@ -192,43 +219,16 @@
 			<br>
 		</div>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" charset="utf-8"></script>
+		<script src="{% static 'js/jquery-1.8.3.min.js' %}" charset="utf-8"></script>
 		<script type="text/javascript" src="{% static 'js/skrollr.min.js' %}"></script>
-		<script type="text/javascript">
-			//detemining if the device is a mobile device
-			var x = screen.width;
-			var y = window.innerWidth;
-			var z = window.devicePixelRatio;
-			var phyWidth = x;
 
-			if (phyWidth > 450) {
-
-				setTimeout(function() {
-					var s = skrollr.init({
-						smoothScrolling: true,
-						mobileDeceleration: 0.004,
-					});
-
-				}, 500);
-				$(window).load(function() {
-					$('#loader').delay(500).fadeOut(function() {
-						$(this).css("display", "none");
-					});
-				});
-			} else {
-				$('#mob_text').append('<a href="/mobile">Click here to go Mobile site!</a>');
-				$('#Header').css("display", "none");
-				$('#WavesLogo').css("display", "none");
-			}
-		</script>
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			$(document).ready(function() {
 				btn.click();
 			});
-		</script>
+		</script> -->
 		<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-		<script type="text/javascript">
-			//managing modal events
+		<!-- <script type="text/javascript">
 			var modal = document.getElementById('myModal');
 
 			// Get the button that opens the modal
@@ -253,22 +253,7 @@
 					modal.style.display = "none";
 				}
 			}
-
-			//esc key dismisses the modal
-			document.onkeydown = function(evt) {
-				evt = evt || window.event;
-				var isEscape = false;
-				if ("key" in evt) {
-					isEscape = (evt.key == "Escape" || evt.key == "Esc");
-				} else {
-					isEscape = (evt.keyCode == 27);
-				}
-
-				if (isEscape) {
-					modal.style.display = "none";
-				}
-			};
-		</script>
+		</script> -->
 </body>
 
 </html>
