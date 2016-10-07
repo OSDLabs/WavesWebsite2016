@@ -22,12 +22,13 @@ If you are new to github, follow [git-task](https://github.com/OSDLabs/git-task)
 
 ```
 $ virtualenv waves
+$ cd waves
 $ source bin/activate
-$ git clone https://github.com//WavesWebsite2016 src
+$ git clone https://github.com/[USERNAME]/WavesWebsite2016 src
 $ cd src
 $ pip install -r requirements.txt
 ```
-NOTE for windows in the 2nd line use:
+NOTE for windows in the 3rd line use:
 ```
 $ waves\Scripts\activate
 ```
