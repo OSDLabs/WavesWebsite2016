@@ -5,5 +5,4 @@ django-push-notifications==1.4.1
 django-registration-redux==1.4
 djangorestframework==3.3.3
 Markdown==2.6.6
-Pillow==3.2.0
 reportlab==3.3.0
