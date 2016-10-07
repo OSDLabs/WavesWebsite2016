@@ -11,11 +11,23 @@
     <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- <script src="https://use.fontawesome.com/1a7fce54c7.js"></script> -->
+    <script type="text/javascript">
+        var x = screen.width;
+        var y = window.innerWidth;
+        var z = window.devicePixelRatio;
+        var phyWidth = x;
+
+        var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+        if (phyWidth > 768 && !isIE) {
+            document.location = "/";
+        }
+    </script>
     <style type="text/css">
         body {
             margin: 0;
             padding: 0;
-            background: #f2f5f7 url("{% static 'images/Blue.png' %}") no-repeat fixed;
+            background: #f2f5f7 url("{% static 'images/Blue-min.png' %}") no-repeat fixed;
         }
 
         #threeLines {
@@ -222,64 +234,66 @@
                     <li><a href="/sightseeing"><i class="fa fa-pagelines fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Sightseeing</li>
                     <li><a href="/contact"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Contact</li>
                     <li><a href="/team"><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Team</li>
-
+                  <li><a href="/accounts/register"><i class="fa fa-anchor fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Register</a></li>
+                    <li><a href="/profile/"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Login</a></li>
                 </ul>
             </div>
         </div>
-      </div>
+    </div>
 
-      <div class="center">
-          <img src="{% static 'images/mobile_logo.png' %}" class="img-responsive" alt="Logo" />
-      </div>
+    <div class="center">
+        <img src="{% static 'images/mobile_logo.png' %}" class="img-responsive" alt="Logo" />
+    </div>
 
-      <style text="text/css">
-          .icons{
-              float: right;
-              color: white;
-              padding: 1%;
-              margin: 1%;
-          }
-          li a{
-              text-decoration: none;
-              color: white;
-          }
-      </style>
-      <div class="icons">
+    <style text="text/css">
+        .icons {
+            float: right;
+            color: white;
+            padding: 1%;
+            margin: 1%;
+        }
+
+        li a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <div class="icons">
         <ul>
-          <li><a href="https://www.instagram.com/wavesbits/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.facebook.com/bitswaves/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-          <li><a href="https://twitter.com/bitswaves" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/wavesbits/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com/bitswaves/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/bitswaves" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
         </ul>
-      </div>
+    </div>
 
-      <style type="text/css">
-          .footer{
+    <style type="text/css">
+        .footer {
             position: absolute;
             bottom: 0.7%;
             left: 20%;
             font-family: 'Raleway', sans-serif;
             font-weight: bold;
-          }
-      </style>
+        }
+    </style>
 
-      <div class="footer">
-          All rights reserved, <i class="fa fa-copyright" aria-hidden="true"></i> Waves, 2016
-      </div>
+    <div class="footer">
+        All rights reserved, <i class="fa fa-copyright" aria-hidden="true"></i> Waves, 2016
+    </div>
 
-      <script src="{% static 'js/jquery.js' %}" charset="utf-8"></script>
-      <script type="text/javascript">
-          var nofilterVal = "none";
+    <script src="{% static 'js/jquery.js' %}" charset="utf-8"></script>
+    <script type="text/javascript">
+        var nofilterVal = "none";
 
-          $('#threeLines').click(function() {
-              $(this).toggleClass('active');
-              $("#main").toggleClass('blur');
-              /*$('.srt_menu').toggleClass('srt_display');*/
-              $('.srt_menu').toggle(500);
-          });
+        $('#threeLines').click(function() {
+            $(this).toggleClass('active');
+            $("#main").toggleClass('blur');
+            /*$('.srt_menu').toggleClass('srt_display');*/
+            $('.srt_menu').toggle(500);
+        });
 
-          $('li').hover(function() {
-              /*$('#initiatives_list').toggle();*/
-              $(this).toggleClass('shadow');
-          })
-      </script>
+        $('li').hover(function() {
+            /*$('#initiatives_list').toggle();*/
+            $(this).toggleClass('shadow');
+        })
+    </script>
 </body>
