@@ -2,6 +2,9 @@
 {% load i18n %}
 
 {% load crispy_forms_tags %}
+{% block title %}
+Login
+{% endblock %}
 {% block head %}
 Login
 {% endblock %}
@@ -19,8 +22,8 @@ Login
 
 
 <hr/>
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-<p>{% trans "Still not registered" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a> !</p>
+<p>{% trans "Still not registered" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a> !</p>
 <p>{% trans "Go to Home" %}: <a href="{% url 'home' %}">{% trans "Home" %}</a></p>
 
 {% endblock %}
