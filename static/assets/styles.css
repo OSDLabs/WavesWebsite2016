@@ -445,7 +445,7 @@ a:hover
 .menucon
 {
     z-index: 30;
-    top: 40%;
+    top: 50%;
 
     padding-top: 2.5%;
 }
@@ -623,4 +623,13 @@ a:hover
 {
     font-size: 1.5em;
     font-weight: bold;
+}
+#date
+{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+
+    position: fixed;
+    top: 1%;
+    right: 1%;
 }
