@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'accommodation',
     'events',
     'team',
+    # 'sponsors'
 
 )
 
