@@ -67,6 +67,16 @@ def hospitality(request):
     else:
         context = {}
     return render(request, "comingsoon.html",context)
+    
+def corona(request):
+    if request.user.is_authenticated():
+        username = request.user.username
+        context = {
+            "username" : username,
+        }
+    else:
+        context = {}
+    return render(request, "corona.html",context)
 
 def previousyear(request):
     if request.user.is_authenticated():

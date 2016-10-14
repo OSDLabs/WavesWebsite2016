@@ -51,6 +51,7 @@ urlpatterns = [
     url(r'^events/$', 'events.views.events', name='events'),
     url(r'^sponsors/$', 'home.views.sponsors', name='contact'),
     url(r'^hospitality/$', 'home.views.hospitality', name='hospitality'),
+    url(r'^corona/$', 'home.views.corona', name='corona'),
     url(r'^previousyear/$', 'home.views.previousyear', name='previousyear'),
     url(r'^sightseeing/$', 'home.views.sightseeing', name='sightseeing'),
     url(r'^contact/$', 'home.views.contact', name='contact'),

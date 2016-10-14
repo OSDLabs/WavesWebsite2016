@@ -1,0 +1,95 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+		<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css">
+		<script src="https://use.fontawesome.com/1a7fce54c7.js"></script>
+
+    <title>
+Waves 2016 | The tides of time
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<div class = "row vcenter">
+	<div id="scaleDiv" class="my-center" data-300p="opacity: 0;" data-330p="opacity: 1;">
+		<div id="Logo"><div style="text-align:center;width:300px;font-size:60px">Corona</div></div>
+	</div>
+	<div class="menucon" id="corona-table">
+		<table class="menu" data-300p="opacity:0;" data-330p="opacity:1">
+			<tr>
+				<td><a href="/link-to-waves-ball.pdf"><i class="fa fa-heartbeat fa-4x" aria-hidden="true"></i><br>Waves Ball</td>
+				<td><a href="/link-to-workshops.pdf"><i class="fa fa-cogs fa-4x" aria-hidden="true"></i><br>Workshops</td>
+				<td><a href="/link-to-informals.pdf"><i class="fa fa-puzzle-piece fa-4x" aria-hidden="true"></i><br>Informal Events</td>
+				<td><a href="/link-to-adv-zone.pdf"><i class="fa fa-gamepad fa-4x" aria-hidden="true"></i><br>Adventure Zone</td>
+			</tr>
+		</table>
+
+	</div>
+
+</div>
+<style type="text/css">
+	h2 {
+		font-family: 'Raleway', sans-serif;
+	}
+
+	h4 {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	td {
+		font-family: 'Raleway', sans-serif;
+		font-size: 105%;
+	}
+
+	a{
+		color: rgba(44, 62, 80, 1);
+	}
+
+	a:hover {
+		text-decoration: none;
+		color:#000;
+	}
+</style>
+<style type="text/css">
+	body
+	{
+		background-image:url("{% static 'images/bg2.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+	}
+    .panel-transparent {
+        background: none;
+    }
+
+    .panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.9)!important;
+    }
+
+    .panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.8)!important;
+    }
+
+   /* .vcenter
+    {
+        padding:50px 50px;
+    }*/
+		#corona-table
+</style>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript">
+    $('.vcenter').css('padding-top',(($(window).height()- $('.vcenter').height())/2))
+</script>
+</body>
+</html>
