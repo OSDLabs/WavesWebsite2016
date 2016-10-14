@@ -74,7 +74,8 @@
     cursor: pointer;
     text-align: center;
 
-    color: white;}
+    color: white;
+}
 
 #background
 {
@@ -444,7 +445,7 @@ a:hover
 .menucon
 {
     z-index: 30;
-    top: 40%;
+    top: 50%;
 
     padding-top: 2.5%;
 }
@@ -592,4 +593,43 @@ a:hover
 
     width: 53px;
     height: 30px;
+}
+
+#countdown-wrapper
+{
+    font-family: Aldrich;
+
+    position: fixed;
+    z-index: 30;
+    bottom: 4.3%;
+    left: 2.5%;
+
+    text-align: left;
+
+    background: none;
+}
+
+#countdown-wrapper td
+{
+    padding: 2%;
+
+    text-align: center;
+}
+#countdown-wrapper tr:nth-child(even)
+{
+    font-size: 1em;
+}
+#countdown-wrapper tr:nth-child(odd)
+{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#date
+{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+
+    position: fixed;
+    top: 1%;
+    right: 1%;
 }
