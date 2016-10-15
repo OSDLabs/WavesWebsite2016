@@ -3,9 +3,11 @@ from .models import Sponsor, CATEGORY
 from django.template import Context
 from django.template.defaulttags import register
 
+
 # Create your views here.
 
 cat_names={}
+count = 0 # Used in templates for checking empty categories
 
 def sponsors(request):
 	cat = []
@@ -24,7 +26,8 @@ def sponsors(request):
 
 	context = {
 			"spons_category" : cat,
-			"spons_cat" : cat_names
+			"spons_cat" : cat_names,
+			"count" : 0,
 	}
 
 	if request.user.is_authenticated():
@@ -33,21 +36,25 @@ def sponsors(request):
 	return render(request, "sponsors.html",context)
 
 
+# def increment(int):
+# 	context["count"] = count
+
 @register.filter
 def get_item(dictionary, key):
 	return dictionary.get(key)
 
-@register.filter
-def checkoffset1(catlist, catitem):
-	if len(catlist)%3==1 and catlist.index(catitem)==0:
-		return True
 
-@register.filter
-def checkoffset2(catlist, catitem):
-	if len(catlist)%3==2 and catlist.index(catitem)==0:
-		return True
+# @register.filter
+# def checkoffset1(catlist, catitem):
+# 	if len(catlist)%3==1 and catlist.index(catitem)==0:
+# 		return True
 
-@register.filter
-def checkoffset0(catlist, catitem):
-	if (len(catlist)%3==0) or ((len(catlist)%3==2 or len(catlist)%3==1) and catlist.index(catitem)!=0):
-		return True
+# @register.filter
+# def checkoffset2(catlist, catitem):
+# 	if len(catlist)%3==2 and catlist.index(catitem)==0:
+# 		return True
+
+# @register.filter
+# def checkoffset0(catlist, catitem):
+# 	if (len(catlist)%3==0) or ((len(catlist)%3==2 or len(catlist)%3==1) and catlist.index(catitem)!=0):
+# 		return True

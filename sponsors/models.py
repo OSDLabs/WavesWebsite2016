@@ -23,7 +23,7 @@ class Sponsor(models.Model):
 	sponsName = models.CharField(max_length=100)
 	sponsPic = models.ImageField(upload_to = "adminuploads/sponsors/pics", blank=True, null=True)
 	sponsCategory = models.CharField(max_length=50, choices=CATEGORY, default='')
-	sponsURL = models.URLField(max_length=200, default="add sponsor's webpage")
+	sponsURL = models.URLField(max_length=200, blank=True)
 
 	def __str__(self):
 		return self.sponsName

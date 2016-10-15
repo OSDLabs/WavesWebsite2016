@@ -1,7 +1,7 @@
 # Waves Website 2016
 
 [![codecov](https://codecov.io/gh/SebastinSanty/WavesWebsite2016/branch/master/graph/badge.svg)](https://codecov.io/gh/SebastinSanty/WavesWebsite2016)![travis](https://travis-ci.org/OSDLabs/WavesWebsite2016.svg?branch=master)
-
+. 
 ##About
 The official repository of the site of Waves, the annual cultural fest of BITS Pilani, Goa. 
 Made using Django Framework of Python for server side. 
