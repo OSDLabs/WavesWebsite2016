@@ -49,7 +49,7 @@ urlpatterns = [
 
     url(r'^pronights/$', 'home.views.pronights', name='pronights'),
     url(r'^events/$', 'events.views.events', name='events'),
-    url(r'^sponsors/$', 'home.views.sponsors', name='contact'),
+    url(r'^sponsors/$', 'sponsors.views.sponsors', name='sponsors'),
     url(r'^hospitality/$', 'home.views.hospitality', name='hospitality'),
     url(r'^previousyear/$', 'home.views.previousyear', name='previousyear'),
     url(r'^sightseeing/$', 'home.views.sightseeing', name='sightseeing'),
