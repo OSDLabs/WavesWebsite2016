@@ -36,7 +36,7 @@ def pronights(request):
         }
     else:
         context = {}
-    return render(request, "comingsoon.html",context)
+    return render(request, "front_pronites.html",context)
 
 def events(request):
     if request.user.is_authenticated():
