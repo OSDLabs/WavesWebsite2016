@@ -56,7 +56,7 @@ def sponsors(request):
         }
     else:
         context = {}
-    return render(request, "comingsoon.html",context)
+    return render(request, "front_spons.html",context)
 
 def hospitality(request):
     if request.user.is_authenticated():
