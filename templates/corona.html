@@ -1,0 +1,211 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>
+Waves 2016 | The tides of time
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body class="container-fluid">
+<div class = "row vcenter">
+<h1>Corona</h1>
+<br>
+
+<div class = "row">
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+ <br>
+      <h3 style = "font-family: Raleway"> Waves Ball </h3>
+    <br>
+</div>
+</div>
+
+<div class='col-sm-10 col-sm-offset-1' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/waves-ball.pdf'%}">
+		<img src="{% static 'img/waves_ball.png'%}" style="max-width:100%">
+		</a>
+	</a>
+</div>
+</div>
+
+
+<div class = "row">
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+ <br>
+      <h3 style = "font-family: Raleway"> Adventure Zone </h3>
+    <br>
+</div>
+</div>
+
+
+<div class='col-sm-6' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/adventurezone.pdf'%}">
+<img src="{% static 'img/paintball.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+<div class='col-sm-6' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/adventurezone.pdf'%}">
+<img src="{% static 'img/zoccer.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+<div class = "row">
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+ <br>
+      <h3 style = "font-family: Raleway"> Workshops </h3>
+    <br>
+</div>
+</div>
+
+<div class='col-sm-10 col-sm-offset-1' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/parkour.pdf'%}">
+<img src="{% static 'img/parkour.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+<div class = "row">
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+ <br>
+      <h3 style = "font-family: Raleway"> Informal Events</h3>
+    <br>
+</div>
+</div>
+
+<div class='col-sm-6' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/roadies.pdf'%}">
+<img src="{% static 'img/roadies.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+<div class='col-sm-6' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/waves-tradeoff.pdf'%}">
+<img src="{% static 'img/waves-tradeoff.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+<div class='col-sm-10 col-sm-offset-1' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/gos.pdf'%}">
+<img src="{% static 'img/GOS.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+<div class = "row">
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+ <br>
+      <h3 style = "font-family: Raleway"> Mobile Informals </h3>
+    <br>
+</div>
+</div>
+
+<div class='col-sm-10 col-sm-offset-1' style="text-align: center;">
+<div class="eventcard card-1">
+	<a href="{% static 'pdfs/mobileinformals.pdf'%}">
+<img src="{% static 'img/mobileinformals.png'%}" style="max-width:100%">
+</a>
+</div>
+</div>
+
+
+
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
+
+<h4>For general queries, mail to info@bits-waves.org</h4>
+<h4>For web-related issues, mail to webadmin@bits-waves.org</h4>
+</div>
+
+</div>
+<style type="text/css">
+    h1
+    {
+        font-size: 3.5em;
+        font-family: Pacifico;
+        text-align:center;
+        text-decoration: underline;
+        -moz-text-decoration-color: yellow; /* Code for Firefox */
+        text-decoration-color: yellow;
+    }
+	body
+	{
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),url("{% static 'img/piano.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 30px 200px !important;
+        color: #ddd;
+	}
+    .panel-transparent {
+        background: none;
+    }
+
+    .panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.9)!important;
+    }
+
+    .panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.8)!important;
+    }
+    .eventcard
+    {
+        margin: 30px 20px;
+        padding: 15px 25px;
+        background-color: #fff;
+        color: #444;
+        font-family: Roboto;
+    }
+
+    .eventpic
+    {
+        width:100%;
+    }
+
+    .card-1 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+    .eventdesc
+    {
+        height: 100px;
+    }
+
+   /* .vcenter
+    {
+        padding:50px 50px;
+    }*/
+</style>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript">
+    $('.vcenter').css('padding-top',(($(window).height()- $('.vcenter').height())/2))
+</script>
+</body>
+</html>
