@@ -23,24 +23,19 @@ Waves 2016 | The tides of time
 
 
 <div class = "row">
-<h1>Sponsors, Partners and Associations</h1>
+<h1>Food Fest</h1>
 <br>
 
 
-
-
-
-{% for i in category %}
 <div class = "row">
 <div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
- <br><br><br>
+<!--  <br><br><br>
       <h3 style = "font-family: Raleway"> {{ i }} </h3>
-    <br><br><br>
+    <br><br><br> -->
 </div>
 </div>
 <div class = "row">
-{% with catget=cat|get_item:i %}
-{% for j in catget %}
+{% for j in cat %}
 <div class='col-sm-4' style="text-align: center;">
 <div class="eventcard">
 <div class="card-1">
@@ -59,9 +54,7 @@ Waves 2016 | The tides of time
 </div> -->
 </div>
 {% endfor %}
-{% endwith %}
 </div>
-{% endfor %}
 
 
 <div class='col-sm-6 col-sm-offset-3' style="text-align: center;">
@@ -83,7 +76,7 @@ Waves 2016 | The tides of time
     }
 	body
 	{
-        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),url("{% static 'img/sponsor.jpg' %}");
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),url("{% static 'img/foodfest.png' %}");
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;

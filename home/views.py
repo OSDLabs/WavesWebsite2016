@@ -48,16 +48,6 @@ def events(request):
         context = {}
     return render(request, "comingsoon.html",context)
 
-def sponsors(request):
-    if request.user.is_authenticated():
-        username = request.user.username
-        context = {
-            "username" : username,
-        }
-    else:
-        context = {}
-    return render(request, "front_spons.html",context)
-
 def hospitality(request):
     if request.user.is_authenticated():
         username = request.user.username

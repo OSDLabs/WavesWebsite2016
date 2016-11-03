@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Event,Indi_Event_Participants, CATEGORY
+from .models import Event,Indi_Event_Participants, CATEGORY, SPONS, Sponsor, FoodFest
 from django.contrib import messages
 from django.db.models import Q
 from django.template import Context
@@ -47,6 +47,44 @@ def checkoffset(catlist, catitem):
 		return True
 	else:
 		return False
+
+def sponsors(request):
+	cat = []
+	for i in SPONS:
+		cat.append(i[0])
+		cat_open = Sponsor.objects.filter(spons_type= i[0]).order_by('order')
+		event_props = []
+		for j in cat_open:
+			event_prop = {}
+			event_prop["order"] = j.order
+			event_prop["desc"] = j.desc
+			event_prop["link"] = j.link
+			event_prop["img"] = j.img
+			event_props.append(event_prop)
+		cat_names[i[0]] = event_props
+	# print(cat_names)
+	context = {
+		"category" : cat,
+		"cat":cat_names
+		}
+	return render(request, "front_spons.html",context)
+
+def foodfest(request):
+	cat_open = FoodFest.objects.order_by('order')
+	event_props = []
+	for j in cat_open:
+		event_prop = {}
+		event_prop["order"] = j.order
+		event_prop["desc"] = j.desc
+		event_prop["link"] = j.link
+		event_prop["img"] = j.img
+		event_props.append(event_prop)
+	# print(cat_names)
+	context = {
+		"cat":event_props
+		}
+	return render(request, "front_food.html",context)
+
 
 # Create your views here.
 def Ind_Events(request):
